@@ -1,0 +1,41 @@
+How to capture data change?
+
+Data Change in the dimension tables can be captured using following methods
+
+Method 1 : SImple pass Through Dimension -->Truncate and load the data
+
+Method 2 : Slowly Changing Dimension
+
+Method 1: SImple Pass Through Dimesion
+    -->Used to load current data after truncating the target table
+    -->Doesnt filter out the existing rows,load all the source rows
+    --> Data flow for all existing rows in the source
+
+Method 2 : Slowly Changing Dimension
+History of data can be maintained in three different types:
+
+TYPE 1: Changed data overwrite the existing data and history in not maintained
+   
+TYPE 2 : Flag- Changed data is added as a new record  and history is maintained using flag
+       
+      -->Version - Changed data is added as new row and history is maintained using
+		 version number
+      -->TimeVariant - Changed data is added as new record and history is maintained using
+		time stamp
+
+TYPE 3 : Changed data is added as new column and history is restrited to previous data
+          and  current data
+
+
+
+Meta data:
+===========
+Metadata is defined as data about data.
+
+Metadata in a DWH defines the source data i.e FlatFile,Relational Database and other objects.
+
+Metadata  is used to define which table is source and target and which 
+concept is used to build logic called transformation to the actual output.
+
+
+
